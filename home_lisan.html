@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LSN - Project</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='lisan_style.css') }}" />
+</head>
+<body>
+
+  <header>
+    <img src="{{ url_for('static', filename='lisan_logo.jpeg') }}" alt="Logo" id="logo"/>
+    <h1>لسان - الترجمة بلغة الإشارة</h1>
+    <div class="btn-container">
+      <button id="sign-to-speech-btn">إشارة إلى الصوت</button>
+      <button id="speech-to-sign-btn">صوت إلى إشارة</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="video-container">
+      <video id="input_video" autoplay playsinline muted></video>
+      <p id="prediction">جاري التنبؤ ....</p>
+    </div>
+  </main>
+
+  <footer>
+    <img src="{{ url_for('static', filename='lisan_avatar.png') }}" alt="Avatar" id="avatar"/>
+    <p>&copy; 2025 لسان | جميع الحقوق محفوظة</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+  <script src="{{ url_for('static', filename='lisan_script.js') }}"></script>
+
+</body>
+</html>
